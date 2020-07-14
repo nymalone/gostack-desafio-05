@@ -9,11 +9,31 @@
 O objetivo desse desafio é criar uma aplicação para continuar treinando o que foi aprendido até agora no Node.js junto ao TypeScript, utilizando o conceito de models, repositories e services! Levando em consideração também, alguns dos princípios **SOLID**.
 
 ##  🤓 Conceitos importantes
-### ... 
+### Model
+É uma forma de armazenar os dados, e com isso começar a isolar um pouco as responsabilidades da aplicação.
+Os models/entidades vão definir qual é o formato desse dado. 
+Todas vez que estivermos *criando algum dado* que vai ser armazenado na nossa aplicação, seja em banco de dados, ou na memória, devemos criar um **model**.
+
+### Repositório
+O próximo conceito aplicado dentro do código para melhorar ainda mais a **estrutura e organização** dos arquivos é o conceito de **repositório**.
+
+Podemos pensar por enquanto em repositório como uma relação entre a **persistência** dos dados e a nossa **rota**. 
+
+**Persistência ↔ Repositório ↔ Rota**
+
+Dentro do repositório é onde vou conseguir manipular as **informações que estão persistidas** por exemplo dentro de um banco ou uma variável, com os métodos: *create, all, delete...*
 
 
+### Services
+Um dos conceitos mais importantes da arquitetura de software.
 
-### Funcionalidades da aplicação
+Armazena as regras de negócio da aplicação evitando que as rotas fiquem com responsabilidades demais, o que vai contra ao princípio **SOLID - Single Responsibility Principle (separation of concerns)**. 
+
+A rota deve ficar preocupada com apenas uma coisa: receber a requisição, chamar outro arquivo para tratar essa requisição, e devolver uma resposta. Sempre que tivermos algo além disso, devemos abstrair dentro de um service. 
+
+Dentro do service aplicamos outro princípio chamado SOLID chamado **Dependency Inversion**. Sempre que o service tiver uma dependência externa ao invés de instanciar a classe de repositório dentro do service, nós vamos receber esse repository como um parâmetro da classe no constructor. Isso vai facilitar para que a aplicação independente de quantos services estejam trabalhando com um mesmo repositório, todos eles estejam trabalhando com o mesmo e não repositórios diferentes criados em cada um dos services. 
+
+## :wrench: Funcionalidades da aplicação
 
 Verificar os arquivos da pasta `src` e completar onde não possui código com o código para atingir os objetivos de cada rota.
 
