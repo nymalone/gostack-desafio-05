@@ -86,7 +86,7 @@ Verificar os arquivos da pasta `src` e completar onde não possui código com o 
 }
 ```
 
-### Especificação dos testes
+## :warning: Especificação dos testes
 
 Em cada teste, tem uma breve descrição no que sua aplicação deve cumprir para que o teste passe.
 
